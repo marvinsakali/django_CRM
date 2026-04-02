@@ -1,0 +1,53 @@
+
+{% extends 'website/base.html' %}
+{% block content %}
+<br/>
+<div class="col-md-6 offset-md-3">
+<div class="card">
+  <div class="card-header"><strong>
+    	{{ records_detail.first_name }} 
+		{{ records_detail.last_name }}</strong>
+  </div>
+  <div class="card-body">
+
+
+
+<p class="card-text">
+<strong>Email: </strong>{{ records_detail.email }}</p>
+
+<p class="card-text">
+<strong>Phone: </strong>{{ records_detail.phone }}
+</p>
+
+<p class="card-text">
+<strong>Address: </strong>{{ records_detail.address }}</p>
+
+<p class="card-text">
+<strong>City: </strong>{{ records_detail.city }}</p>
+
+<p class="card-text">
+<strong>State: </strong>{{ records_detail.state }}</p>
+
+<p class="card-text">
+<strong>Zipcode: </strong>{{ records_detail.zip_code }}</p>
+
+<p class="card-text">
+<strong>Create At: </strong>{{ records_detail.created_at }}</p>
+
+<p class="card-text">
+<strong>ID: </strong>{{ records_detail.id }}</p>
+    
+    
+  </div>
+</div>
+
+<br/><br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
+<a href="{% url 'delete_record' records_detail.id %}" class="btn btn-danger">Delete</a>
+
+<a href="{% url 'update_record' records_detail.id %}" class="btn btn-secondary">Update Record</a>
+		
+</div>
+
+{% endblock %}
